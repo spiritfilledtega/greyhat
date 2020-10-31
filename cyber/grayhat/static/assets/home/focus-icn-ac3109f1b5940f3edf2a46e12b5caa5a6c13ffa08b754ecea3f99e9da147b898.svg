@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="532 108 50.709 51">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #252525;
+      }
+    </style>
+  </defs>
+  <g id="focus-icn" transform="translate(325.5 -86)">
+    <g id="Group_1" data-name="Group 1" transform="translate(206.5 194)">
+      <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-1" width="2" height="16.32" transform="translate(0 0.583)"/>
+      <rect id="Rectangle_2" data-name="Rectangle 2" class="cls-1" width="2" height="16.32" transform="translate(16.32 0) rotate(90)"/>
+    </g>
+    <g id="Group_3" data-name="Group 3" transform="translate(257.209 194.291) rotate(90)">
+      <rect id="Rectangle_1-2" data-name="Rectangle 1" class="cls-1" width="2" height="16.32" transform="translate(0 0.583)"/>
+      <rect id="Rectangle_2-2" data-name="Rectangle 2" class="cls-1" width="2" height="16.32" transform="translate(16.32 0) rotate(90)"/>
+    </g>
+    <g id="Group_4" data-name="Group 4" transform="translate(257.209 245) rotate(180)">
+      <rect id="Rectangle_1-3" data-name="Rectangle 1" class="cls-1" width="2" height="16.32" transform="translate(0 0.583)"/>
+      <rect id="Rectangle_2-3" data-name="Rectangle 2" class="cls-1" width="2" height="16.32" transform="translate(16.32 0) rotate(90)"/>
+    </g>
+    <g id="Group_5" data-name="Group 5" transform="translate(206.5 245) rotate(-90)">
+      <rect id="Rectangle_1-4" data-name="Rectangle 1" class="cls-1" width="2" height="16.32" transform="translate(0 0.583)"/>
+      <rect id="Rectangle_2-4" data-name="Rectangle 2" class="cls-1" width="2" height="16.32" transform="translate(16.32 0) rotate(90)"/>
+    </g>
+  </g>
+</svg>

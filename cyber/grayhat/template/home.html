@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+{% load static %}
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en>
+<![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en">
+<![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]> ><! <![endif]-->
+<html lang='en'>
+<!-- <![endif] -->
+
+<!-- Mirrored from hackenproof.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Jul 2020 17:45:21 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head lang='en'>
+  <meta charset='utf-8'>
+  <title>HackenProof: Bug Bounty and Vulnerability Coordination Platform</title>
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token" content="GwQ1FFosT8CJry7lXtSqOr/O7s9z6V7lfxGXYw8RqBc0rUDAOF+rVKOybRKfsBzjq5k+tqFKV+8OBoJj40f2lg==" />
+  <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'assets/home/favicons/apple-touch-icon-877e3ab6812d47bab88fb6d481acdbea7fa6995a95c89743bb18e5a0a4012892.png' %}" sizes="180x180" />
+  <link rel="icon" type="image/png" href="{% static 'assets/home/favicons/favicon-32x32-63afb31b2b98fafbbdb12c5cbcba1231e3a7ba8d669ea7680370c90bdc4e1ad7.png' %}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{% static 'assets/home/favicons/favicon-16x16-b7aeb056379d4392ef3764ec45581ccf88771f6a999d9b39f6d8639529f60bc4.png' %}" sizes="16x16" />
+  <link rel="mask-icon" type="image/x-icon" href="assets/home/favicons/safari-pinned-tab-20a13a367da90ce0918721083730f3c1ec5bf828cd89f878d630121458f0e65a.svg" color="#5bbad5" />
+  <meta content='/assets/home/favicons/mstile-150x150-6990bfe38c7ebb2ce9954480fc5b7fcd774a873ffb9ca42e093261d823eb7318.png' name='msapplication-TileImage'>
+  <meta content='#2b5797' name='msapplication-TileColor'>
+  <meta content='#ffffff' name='theme-color'>
+  <link href='{% static 'assets/home/favicons/manifest-c27e4cdf86732c1ccf3a704ca15d264810980377aac9e86862f58e52cd67d722.json' %}' rel='manifest'>
+  <meta name="action-cable-url" content="wss://hackenproof.com:8443" />
+  <link href='index.html' rel='canonical'>
+  <meta content='HackenProof' property='og:title'>
+  <meta content='website' property='og:type'>
+  <meta content='http://hackenproof.com/' property='og:url'>
+  <meta content='https://hackenproof.com/preview_hp_new.jpg' property='og:image'>
+  <meta content='HackenProof is Vulnerability Disclosure &amp; Bug Bounty Platform. By working with the community of security researchers we help companies uncover security vulnerabilities.' property='og:description'>
+  <meta
+    content='HackenProof connects businesses to a community of cybersecurity researchers via the Vulnerability Coordination Platform. We help businesses run custom-tailored Bug Bounty Programs that significantly reduce the risk of security incidents of their digital assets.'
+    name='description'>
+
+
+
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        '../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PV9J5G7');
+  </script>
+  <script>
+    ! function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      '../connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '751597178561630');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height='1' src='https://www.facebook.com/tr?id=751597178561630&amp;ev=PageView&amp;noscript=1' style='display:none' width='1'>
+  </noscript>
+
+
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+  <script>
+    window.NREUM || (NREUM = {});
+    NREUM.info = {
+      "beacon": "bam.nr-data.net",
+      "errorBeacon": "bam.nr-data.net",
+      "licenseKey": "fbc6b5c5dc",
+      "applicationID": "143379461",
+      "transactionName": "dg1fFUtXCFxSSkpRC1gHHghXXAFI",
+      "queueTime": 0,
+      "applicationTime": 29,
+      "agent": ""
+    }
+  </script>
+  <script>
+    (window.NREUM || (NREUM = {})).loader_config = {
+      licenseKey: "fbc6b5c5dc",
+      applicationID: "143379461"
+    };
+    window.NREUM || (NREUM = {}), __nr_require = function(e, n, t) {
+      function r(t) {
+        if (!n[t]) {
+          var i = n[t] = {
+            exports: {}
+          };
+          e[t][0].call(i.exports, function(n) {
+            var i = e[t][1][n];
+            return r(i || n)
+          }, i, i.exports)
+        }
+        return n[t].exports
+      }
+      if ("function" == typeof __nr_require) return __nr_require;
+      for (var i = 0; i < t.length; i++) r(t[i]);
+      return r
+    }({
+      1: [function(e, n, t) {
+        function r() {}
+
+        function i(e, n, t) {
+          return function() {
+            return o(e, [u.now()].concat(f(arguments)), n ? null : this, t), n ? void 0 : this
+          }
+        }
+        var o = e("handle"),
+          a = e(4),
+          f = e(5),
+          c = e("ee").get("tracer"),
+          u = e("loader"),
+          s = NREUM;
+        "undefined" == typeof window.newrelic && (newrelic = s);
+        var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+          l = "api-",
+          d = l + "ixn-";
+        a(p, function(e, n) {
+          s[n] = i(l + n, !0, "api")
+        }), s.addPageAction = i(l + "addPageAction", !0), s.setCurrentRouteName = i(l + "routeName", !0), n.exports = newrelic, s.interaction = function() {
+          return (new r).get()
+        };
+        var m = r.prototype = {
+          createTracer: function(e, n) {
+            var t = {},
+              r = this,
+              i = "function" == typeof n;
+            return o(d + "tracer", [u.now(), e, t], r),
+              function() {
+                if (c.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], t), i) try {
+                  return n.apply(this, arguments)
+                } catch (e) {
+                  throw c.emit("fn-err", [arguments, this, e], t), e
+                } finally {
+                  c.emit("fn-end", [u.now()], t)
+                }
+              }
+          }
+        };
+        a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, n) {
+          m[n] = i(d + n)
+        }), newrelic.noticeError = function(e, n) {
+          "string" == typeof e && (e = new Error(e)), o("err", [e, u.now(), !1, n])
+        }
+      }, {}],
+      2: [function(e, n, t) {
+        function r(e, n) {
+          var t = e.getEntries();
+          t.forEach(function(e) {
+            "first-paint" === e.name ? c("timing", ["fp", Math.floor(e.startTime)]) : "first-contentful-paint" === e.name && c("timing", ["fcp", Math.floor(e.startTime)])
+          })
+        }
+
+        function i(e, n) {
+          var t = e.getEntries();
+          t.length > 0 && c("lcp", [t[t.length - 1]])
+        }
+
+        function o(e) {
+          if (e instanceof s && !l) {
+            var n, t = Math.round(e.timeStamp);
+            n = t > 1e12 ? Date.now() - t : u.now() - t, l = !0, c("timing", ["fi", t, {
+              type: e.type,
+              fid: n
+            }])
+          }
+        }
+        if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) {
+          var a, f, c = e("handle"),
+            u = e("loader"),
+            s = NREUM.o.EV;
+          if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) {
+            a = new PerformanceObserver(r), f = new PerformanceObserver(i);
+            try {
+              a.observe({
+                entryTypes: ["paint"]
+              }), f.observe({
+                entryTypes: ["largest-contentful-paint"]
+              })
+            } catch (p) {}
+          }
+          if ("addEventListener" in document) {
+            var l = !1,
+              d = ["click", "keydown", "mousedown", "pointerdown", "touchstart"];
+            d.forEach(function(e) {
+              document.addEventListener(e, o, !1)
+            })
+          }
+        }
+      }, {}],
+      3: [function(e, n, t) {
+        function r(e, n) {
+          if (!i) return !1;
+          if (e !== i) return !1;
+          if (!n) return !0;
+          if (!o) return !1;
+          for (var t = o.split("."), r = n.split("."), a = 0; a < r.length; a++)
+            if (r[a] !== t[a]) return !1;
+          return !0
+        }
+        var i = null,
+          o = null,
+          a = /Version\/(\S+)\s+Safari/;
+        if (navigator.userAgent) {
+          var f = navigator.userAgent,
+            c = f.match(a);
+          c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[1])
+        }
+        n.exports = {
+          agent: i,
+          version: o,
+          match: r
+        }
+      }, {}],
+      4: [function(e, n, t) {
+        function r(e, n) {
+          var t = [],
+            r = "",
+            o = 0;
+          for (r in e) i.call(e, r) && (t[o] = n(r, e[r]), o += 1);
+          return t
+        }
+        var i = Object.prototype.hasOwnProperty;
+        n.exports = r
+      }, {}],
+      5: [function(e, n, t) {
+        function r(e, n, t) {
+          n || (n = 0), "undefined" == typeof t && (t = e ? e.length : 0);
+          for (var r = -1, i = t - n || 0, o = Array(i < 0 ? 0 : i); ++r < i;) o[r] = e[n + r];
+          return o
+        }
+        n.exports = r
+      }, {}],
+      6: [function(e, n, t) {
+        n.exports = {
+          exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+        }
+      }, {}],
+      ee: [function(e, n, t) {
+        function r() {}
+
+        function i(e) {
+          function n(e) {
+            return e && e instanceof r ? e : e ? c(e, f, o) : o()
+          }
+
+          function t(t, r, i, o) {
+            if (!l.aborted || o) {
+              e && e(t, r, i);
+              for (var a = n(i), f = v(t), c = f.length, u = 0; u < c; u++) f[u].apply(a, r);
+              var p = s[y[t]];
+              return p && p.push([b, t, r, a]), a
+            }
+          }
+
+          function d(e, n) {
+            h[e] = v(e).concat(n)
+          }
+
+          function m(e, n) {
+            var t = h[e];
+            if (t)
+              for (var r = 0; r < t.length; r++) t[r] === n && t.splice(r, 1)
+          }
+
+          function v(e) {
+            return h[e] || []
+          }
+
+          function g(e) {
+            return p[e] = p[e] || i(t)
+          }
+
+          function w(e, n) {
+            u(e, function(e, t) {
+              n = n || "feature", y[t] = n, n in s || (s[n] = [])
+            })
+          }
+          var h = {},
+            y = {},
+            b = {
+              on: d,
+              addEventListener: d,
+              removeEventListener: m,
+              emit: t,
+              get: g,
+              listeners: v,
+              context: n,
+              buffer: w,
+              abort: a,
+              aborted: !1
+            };
+          return b
+        }
+
+        function o() {
+          return new r
+        }
+
+        function a() {
+          (s.api || s.feature) && (l.aborted = !0, s = l.backlog = {})
+        }
+        var f = "nr@context",
+          c = e("gos"),
+          u = e(4),
+          s = {},
+          p = {},
+          l = n.exports = i();
+        l.backlog = s
+      }, {}],
+      gos: [function(e, n, t) {
+        function r(e, n, t) {
+          if (i.call(e, n)) return e[n];
+          var r = t();
+          if (Object.defineProperty && Object.keys) try {
+            return Object.defineProperty(e, n, {
+              value: r,
+              writable: !0,
+              enumerable: !1
+            }), r
+          } catch (o) {}
+          return e[n] = r, r
+        }
+        var i = Object.prototype.hasOwnProperty;
+        n.exports = r
+      }, {}],
+      handle: [function(e, n, t) {
+        function r(e, n, t, r) {
+          i.buffer([e], r), i.emit(e, n, t)
+        }
+        var i = e("ee").get("handle");
+        n.exports = r, r.ee = i
+      }, {}],
+      id: [function(e, n, t) {
+        function r(e) {
+          var n = typeof e;
+          return !e || "object" !== n && "function" !== n ? -1 : e === window ? 0 : a(e, o, function() {
+            return i++
+          })
+        }
+        var i = 1,
+          o = "nr@id",
+          a = e("gos");
+        n.exports = r
+      }, {}],
+      loader: [function(e, n, t) {
+        function r() {
+          if (!x++) {
+            var e = E.info = NREUM.info,
+              n = d.getElementsByTagName("script")[0];
+            if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && n)) return s.abort();
+            u(y, function(n, t) {
+              e[n] || (e[n] = t)
+            }), c("mark", ["onload", a() + E.offset], null, "api");
+            var t = d.createElement("script");
+            t.src = "https://" + e.agent, n.parentNode.insertBefore(t, n)
+          }
+        }
+
+        function i() {
+          "complete" === d.readyState && o()
+        }
+
+        function o() {
+          c("mark", ["domContent", a() + E.offset], null, "api")
+        }
+
+        function a() {
+          return O.exists && performance.now ? Math.round(performance.now()) : (f = Math.max((new Date).getTime(), f)) - E.offset
+        }
+        var f = (new Date).getTime(),
+          c = e("handle"),
+          u = e(4),
+          s = e("ee"),
+          p = e(3),
+          l = window,
+          d = l.document,
+          m = "addEventListener",
+          v = "attachEvent",
+          g = l.XMLHttpRequest,
+          w = g && g.prototype;
+        NREUM.o = {
+          ST: setTimeout,
+          SI: l.setImmediate,
+          CT: clearTimeout,
+          XHR: g,
+          REQ: l.Request,
+          EV: l.Event,
+          PR: l.Promise,
+          MO: l.MutationObserver
+        };
+        var h = "" + location,
+          y = {
+            beacon: "bam.nr-data.net",
+            errorBeacon: "bam.nr-data.net",
+            agent: "js-agent.newrelic.com/nr-1169.min.js"
+          },
+          b = g && w && w[m] && !/CriOS/.test(navigator.userAgent),
+          E = n.exports = {
+            offset: f,
+            now: a,
+            origin: h,
+            features: {},
+            xhrWrappable: b,
+            userAgent: p
+          };
+        e(1), e(2), d[m] ? (d[m]("DOMContentLoaded", o, !1), l[m]("load", r, !1)) : (d[v]("onreadystatechange", i), l[v]("onload", r)), c("mark", ["firstbyte", f], null, "api");
+        var x = 0,
+          O = e(6)
+      }, {}],
+      "wrap-function": [function(e, n, t) {
+        function r(e) {
+          return !(e && e instanceof Function && e.apply && !e[a])
+        }
+        var i = e("ee"),
+          o = e(5),
+          a = "nr@original",
+          f = Object.prototype.hasOwnProperty,
+          c = !1;
+        n.exports = function(e, n) {
+          function t(e, n, t, i) {
+            function nrWrapper() {
+              var r, a, f, c;
+              try {
+                a = this, r = o(arguments), f = "function" == typeof t ? t(r, a) : t || {}
+              } catch (u) {
+                l([u, "", [r, a, i], f])
+              }
+              s(n + "start", [r, a, i], f);
+              try {
+                return c = e.apply(a, r)
+              } catch (p) {
+                throw s(n + "err", [r, a, p], f), p
+              } finally {
+                s(n + "end", [r, a, c], f)
+              }
+            }
+            return r(e) ? e : (n || (n = ""), nrWrapper[a] = e, p(e, nrWrapper), nrWrapper)
+          }
+
+          function u(e, n, i, o) {
+            i || (i = "");
+            var a, f, c, u = "-" === i.charAt(0);
+            for (c = 0; c < n.length; c++) f = n[c], a = e[f], r(a) || (e[f] = t(a, u ? f + i : i, o, f))
+          }
+
+          function s(t, r, i) {
+            if (!c || n) {
+              var o = c;
+              c = !0;
+              try {
+                e.emit(t, r, i, n)
+              } catch (a) {
+                l([a, t, r, i])
+              }
+              c = o
+            }
+          }
+
+          function p(e, n) {
+            if (Object.defineProperty && Object.keys) try {
+              var t = Object.keys(e);
+              return t.forEach(function(t) {
+                Object.defineProperty(n, t, {
+                  get: function() {
+                    return e[t]
+                  },
+                  set: function(n) {
+                    return e[t] = n, n
+                  }
+                })
+              }), n
+            } catch (r) {
+              l([r])
+            }
+            for (var i in e) f.call(e, i) && (n[i] = e[i]);
+            return n
+          }
+
+          function l(n) {
+            try {
+              e.emit("internal-error", n)
+            } catch (t) {}
+          }
+          return e || (e = i), t.inPlace = u, t.flag = a, t
+        }
+      }, {}]
+    }, {}, ["loader"]);
+  </script>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+  <meta content='True' name='HandheldFriendly'>
+  <meta content='yes' name='apple-mobile-web-app-capable'>
+  <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+  <meta content='telephone=no' name='format-detection'>
+  <meta content='address=no' name='format-detection'>
+  <link rel="stylesheet" media="screen" href="{% static 'assets/home_index-9e9e9f24451cfbc39ed0d9f6b308246f53cabfcc7a3cacda389ece1624c31b3e.css' %}" />
+</head>
+
+
+
+<body class=' landing' data-action='index' data-controller='home'>
+  <div class='flash-msgs--fixed flash-msg--js flash-msg--version' id='flash-msgs'>
+    <div id='flash-msgs__container'>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='breadcrumbs breadcrumbs--positioned'>
+
+    </div>
+  </div>
+  <div class='loader-container'>
+    <div class='loader'></div>
+  </div>
+  <div class='main-menu--wrapper inverted'>
+
+
+    {% include 'nav.html' %}
+
+
+  </div>
+  <div class='center-fixed'>
+    <div class='fixed-btn'>
+      <div class='absolute'>
+        <div class='bottom'>
+          <!-- <a class='btn-researcher hidden-link notranslate' data-link='/register'>Start<br />hacking</a>
+          <a class='btn-cta hover-btn hidden-link notranslate' data-link='/companies/new'>Request<br />a demo</a> -->
+
+          <a class='btn-researcher hidden-link notranslate' data-link='#'>Start<br />hacking</a>
+          <a class='btn-cta hover-btn hidden-link notranslate' data-link='#'>Request<br />a demo</a>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class='first-screen focus-page' style="background:#01210a">
+    <div class='container--center height-100'>
+      <div class='padding height-100'>
+        <div class='molecule'>
+          <div class='molecule-video' style="background:green">
+            <!-- <video autoplay='' class='video' loop='' muted='' playsinline='' poster='{% static 'assets/home/video/mask-fffdc317f2c7d62221a88a33f0ab7eee1e1168c400d0999869e52484909f8653.png' %}'>
+              <source data-url='/assets/home/video/hackenproof_shape-06f177eafdef6ff44aabc08b287395fb898f12eb78af577bd176b0fcd4c482de.mp4' src='#' type='video/mp4'>
+            </video> -->
+            <!-- <img alt="#" src="{% static 'assets/video-mask-fffdc317f2c7d62221a88a33f0ab7eee1e1168c400d0999869e52484909f8653.png' %}" /> -->
+          </div>
+        </div>
+        <div class='flex-center height-100'>
+          <div class='text'>
+            <div class='animate-point'>
+              <div class='relative'>
+                <div id='logo-point'></div>
+              </div>
+              <svg class='svg-point' viewbox='0 0 64.61 64.81' xmlns='http://www.w3.org/2000/svg'>
+                <g>
+                  <path class='cls-1' d='M62.36,22.22l.11.33,2.14-.73-.11-.33A34.25,34.25,0,0,0,43.64.35L43.31.24l-.76,2.13.33.12A32,32,0,0,1,62.36,22.22Z'></path>
+                  <path class='cls-1' d='M62.32,42.7A32,32,0,0,1,42.88,62.32l-.33.11.76,2.14.33-.12a34.26,34.26,0,0,0,20.82-21l.11-.33-2.14-.74Z'></path>
+                  <path class='cls-1' d='M2.3,42.7l-.12-.33L0,43.1l.11.33A34.2,34.2,0,0,0,21.69,64.7l.33.11.71-2.16-.33-.1A31.91,31.91,0,0,1,2.3,42.7Z'></path>
+                  <path class='cls-1' d='M2.26,22.22a31.86,31.86,0,0,1,20.14-20l.33-.11L22,0l-.33.11A34.15,34.15,0,0,0,.11,21.49L0,21.82l2.14.73Z'></path>
+                  <circle class='cls-2' cx='32.31' cy='32.4' r='16.39' transform='translate(-4.77 5.59) rotate(-9.22)'></circle>
+                  <polygon class='cls-3' points='31.08 36.04 31.08 28.77 28.96 28.77 28.96 31.39 25.28 31.39 25.28 28.77 23.17 28.77 23.17 36.04 25.28 36.04 25.28 33.37 28.96 33.37 28.96 36.04 31.08 36.04'></polygon>
+                  <path class='cls-3' d='M41.45,28.76H33.53V36h2.11V34.35h5.81ZM39.38,32.5H35.64V30.61h3.74Z'></path>
+                </g>
+              </svg>
+            </div>
+            <h1>GRAYHAT CYBERSECURITY TESTING PLATFORM</h1>
+            <p>
+              Run custom-tailored Bug Bounty Programs to secure your business and assets
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='how-it' id='how-it'>
+    <div class='grid-container'>
+      <div class='grid-row'>
+        <div class='grid-col-1'></div>
+        <div class='grid-col-fluid'></div>
+      </div>
+      <div class='grid-row'>
+        <div class='grid-col-1'></div>
+        <div class='grid-col-fluid grid-col--filled' data-100-top='background-position: 70% 80%' data-900-top='background-position: 70% 20%'></div>
+      </div>
+      <div class='grid-row'>
+        <div class='grid-col-1'></div>
+        <div class='grid-col-fluid'></div>
+      </div>
+    </div>
+    <div class='container--center illustration-block'>
+      <div class='padding'>
+        <div class='title'>
+          <h2>HOW IT WORKS</h2>
+        </div>
+        <div class='focus-page'>
+          <section class='goals'>
+            <div class='line'>
+              <div class='about-image'>
+                <div class='svg-figure'>
+                  <svg class='svg-goals' viewbox='0 0 106 107.67'>
+                    <polyline class='cls-1' points='27.83 0.5 0.5 0.5 0.5 28.67'></polyline>
+                    <polyline class='cls-1' points='105.5 28.67 105.5 0.5 78.17 0.5'></polyline>
+                    <polyline class='cls-1' points='0.5 79 0.5 107.17 27.83 107.17'></polyline>
+                    <polyline class='cls-1' points='78.17 107.17 105.5 107.17 105.5 79'></polyline>
+                  </svg>
+                  <div class='svg-animation-1' data-aos='zoom-in' data-aos-anchor-placement='center-center' data-aos-offset='-200'></div>
+                </div>
+              </div>
+              <div class='caption'>
+                <h3>STEP 1.</h3>
+                <h4>Your program goals</h4>
+                <p>We help to set a clear scope, agree on a budget and make recommendations based on your company`s needs.</p>
+              </div>
+            </div>
+          </section>
+          <section class='step-right launch'>
+            <div class='line'>
+              <div class='about-image'>
+                <div class='svg-figure'>
+                  <svg class='svg-launch' viewbox='0 0 35.92 37'>
+                    <polyline class='cls-1' points='0 0.5 35.42 0.5 35.42 37'></polyline>
+                  </svg>
+                  <div class='svg-animation-2' data-aos='dot-animate-translate' data-aos-anchor-placement='center-center' data-aos-offset='-200'></div>
+                </div>
+              </div>
+              <div class='caption'>
+                <h3>STEP 2.</h3>
+                <h4>Bug Bounty Program Launch</h4>
+                <p>We launch your program and reach out to our committed crowd of hackers, attracting top talent to your bounty program by with consistent and coordinated attention.</p>
+              </div>
+            </div>
+          </section>
+          <section class='hunting'>
+            <div class='line'>
+              <div class='about-image'>
+                <div class='svg-figure'>
+                  <svg class='svg-hunting' viewbox='0 0 77.22 51.56'>
+                    <polyline class='cls-1' points='51.47 0.35 76.52 25.4 50.71 51.21'></polyline>
+                    <polyline class='cls-1' points='25.75 0.35 0.71 25.4 26.52 51.21'></polyline>
+                  </svg>
+                  <div class='svg-animation-1' data-aos='zoom-in' data-aos-anchor-placement='center-center' data-aos-offset='-200'></div>
+                  <div class='svg-animation-2' data-aos='zoom-in' data-aos-anchor-placement='center-center' data-aos-offset='-200'></div>
+                </div>
+              </div>
+              <div class='caption'>
+                <h3>STEP 3.</h3>
+                <h4>Bug Hunting</h4>
+                <p>Our community of hackers starts searching for vulnerabilities.</p>
+              </div>
+            </div>
+          </section>
+          <section class='step-right reporting'>
+            <div class='line'>
+              <div class='about-image'>
+                <div class='svg-figure'>
+                  <svg class='svg-reporting' viewbox='0 0 41.87 41.88'>
+                    <polyline class='cls-1' points='0.5 7.23 0.5 41.38 35.69 41.38'></polyline>
+                    <line class='cls-1' x1='0.75' x2='41.51' y1='41.12' y2='0.35'></line>
+                  </svg>
+                  <div class='svg-animation-2' data-aos='dot-animate-translate-bottom' data-aos-anchor-placement='center-center' data-aos-offset='-200'></div>
+                </div>
+              </div>
+              <div class='caption'>
+                <h3>STEP 4.</h3>
+                <h4>Reporting</h4>
+                <p>Vulnerabilities are submitted and managed via our Coordination platform.</p>
+              </div>
+            </div>
+          </section>
+          <section class='triage'>
+            <div class='line'>
+              <div class='about-image'>
+                <div class='svg-figure'>
+                  <svg class='svg-triage' viewbox='0 0 37.33 37.33'>
+                    <rect class='cls-1' height='36.33' width='36.33' x='0.5' y='0.5'></rect>
+                  </svg>
+                  <div class='svg-animation-1' data-aos='zoom-in' data-aos-anchor-placement='center-center' data-aos-offset='-200'></div>
+                  <div class='svg-animation-2' data-aos='zoom-in' data-aos-anchor-placement='center-center' data-aos-offset='-200'></div>
+                </div>
+              </div>
+              <div class='caption'>
+                <h3>STEP 5.</h3>
+                <h4>Triage and Fixes</h4>
+                <p>Reports are reviewed and triaged by the Greyhat team, and then passed on to your security team for fixing. </br></br> Depending on preference, you can choose to publicly disclose any reports, once the issues are resolved.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='section-challenge'>
+    <div class='challenge-backscene'>
+      <div class='challenge-backscene__wrapper' style="background:#01210a">
+        <div class='challenge-backscene__illustration-1' data-1100-top='bottom: -360px; left: 180px' data-150-top='bottom: -280px; left: 230px'></div>
+        <div class='challenge-backscene__illustration-2' data-10-top='bottom: 30%; right: calc(10% + 300px);' data-700-top='bottom: 15%; right: calc(10% + 380px);'></div>
+        <div class='challenge-backscene__illustration-3' data-10-top='top: 280px; left: calc(10% + 600px);' data-700-top='top: 240px; left: calc(10% + 500px);'></div>
+      </div>
+    </div>
+    <div class='container--center' style="background:#01210a">
+      <div class='padding'>
+        <div class='title'>
+          <h2>THE CHALLENGE</h2>
+          <div class='title__divider' data-aos='fade-left'></div>
+        </div>
+        <ul class='challenge__list'>
+          <li>Cybercrime is relentless, undiminished, and unlikely to stop</li>
+          <li>By estimates from McAfee, cybercrime now costs the world almost $600 billion, or 0.8% of global GDP.</li>
+          <li>The Privacy Rights Clearing House estimates there were 4.8 billion records lost as a result of data breaches in 2016, with hacking responsible for about 60% of these.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class='section-solution'>
+    <div class='solution__backscene-bg' data-1390-top='left: -100px; top: -70px;' data-440-top='left: -50px; top: -150px;'></div>
+    <div class='solution__illustration-2' data-100-top='background-position: 0 0; top: -25%' data-800-top='background-position: 0 60px; top: 0%'></div>
+    <div class='solution__illustration-1'></div>
+    <div class='container--center'>
+      <div class='padding'>
+        <div class='title'>
+          <h2>GRAYHAT CYBER SOLUTION</h2>
+          <p>
+          <p>A proven approach to security: don't deal with hacking attacks, prevent them instead. Since there is no product that doesn't have an attack vector, the question is: how can we minimize risks? </p>
+          <p>We connect business with a community of hackers from different parts of the globe. Our bug bounty platform allows you to get continuous information on the condition of security of your company and allows independent security researchers
+            to report the discovered breaches in a legal way.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='bug' style="background:#01210a">
+    <div class='container--center' style="background:#01210a">
+      <div class='padding'>
+        <div class='title'>
+          <h4>COMPANIES THAT HAVE ALREADY TRIED TOKENIZED BUG BOUNTY</h4>
+          <p>Are you sure you are not under surveillance?</p>
+        </div>
+        <div class='row'>
+          <ul class='list-tabs'>
+            <li class='tab-kuna'>
+              <div class='open-tab'>
+                <div class='logo'>
+                  <img title="" src="{% static 'assets/home/kuna-7730d07c290e973ffc182e90c9968bdf5b01f20f16c04e4c47e86ce2d8d66ac0.png' %}" alt="Kuna" />
+                </div>
+              </div>
+              <div class='text-tabs'>
+                <div class='flex-sm'>
+                  <div class='text'>
+                    <p>The security team at Kuna have been operating their public bug bounty program with Greyhat for over 12 months. They have worked with Greyhat to successfully engage the white hat hacker community, enabling them to create
+                      a secure crypto exchange.</p>
+                    <p>Roman Cherednik, CTO at KUNA: </br> "Running a bug bounty program is an extra measure for us that improves our security by leveraging the community of white hackers."</p>
+                  </div>
+                  <ul class='info'>
+                    <li>
+                      <p class='name'>reports</p>
+                      <p class='answer'>12</p>
+                    </li>
+                    <li>
+                      <p class='name'>vulnerabilities</p>
+                      <p class='answer'>3</p>
+                    </li>
+                    <li class='text-small'>
+                      <p class='name'>mode</p>
+                      <p class='answer'>public bug bounty</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class='text-center'>
+                  <a target="_blank" class="btn-start" href="https://resources.hackenproof.com/hubfs/HackenProof/How_Kuna_works_with_hackers.pdf">Read the case study
+                  </a></div>
+              </div>
+            </li>
+            <li>
+              <div class='open-tab'>
+                <div class='logo'>
+                  <img title="" src="{% static 'assets/home/vechain_logo-48161f401c9392a6d5a4f82077d32ea20a3d79ba9b508ca441f064cab109e694.png' %}" alt="Vechain logo" />
+                </div>
+              </div>
+              <div class='text-tabs'>
+                <div class='flex-sm'>
+                  <div class='text'>
+                    <p>VeChain is a leading global enterprise level public blockchain platform. It aims to connect blockchain technology to the real world by providing a comprehensive governance structure, a robust economic model, as well as advanced
+                      IoT integration, and pioneers in real-world applications.</p>
+                    <p>In order to help secure data of their customers, VeChain Foundation turned to Greyhat to run a Private Bug Bounty Program at first, and later switched to a Public Program.</p>
+                    <p>VeChain COO Kevin Feng: “VeChain values security as the first priority for a public blockchain platform made for enterprises adoption. And we chose the Greyhat platform to host a bug bounty to leverage the power of the
+                      community.”</p>
+                  </div>
+                  <ul class='info'>
+                    <li>
+                      <p class='name'>reports</p>
+                      <p class='answer'>12</p>
+                    </li>
+                    <li>
+                      <p class='name'>vulnerabilities</p>
+                      <p class='answer'>3</p>
+                    </li>
+                    <li class='text-small'>
+                      <p class='name'>mode</p>
+                      <p class='answer'>public bug bounty</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class='open-tab'>
+                <div class='logo'>
+                  <img title="" src="{% static 'assets/home/everitoken-86e6da01b77fe4db1e43b11d63953ed49df9097498f3fb53d9a4a138eb05e454.png' %}" alt="Everitoken" />
+                </div>
+              </div>
+              <div class='text-tabs'>
+                <div class='flex-sm'>
+                  <div class='text'>
+                    <p>Registered in Zug Switzerland, everiToken is world's first token-customized public chain aiming to be the best infrastructure to tokenize everything and for token economy.</p>
+                    <p>Built on everiToken blockchain, everiPay provides world's fastest, safest and commerically avaiable micropayments solutions.</p>
+                    <p>everiToken CTO Harry Wong: Greyhat is such an important and necessary platform for everiToken blockchain. Security is our first priority, so I appreciate the significance of the cooperation with Greyhat.</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class='open-tab'>
+                <div class='logo'>
+                  <img title="" src="{% static 'assets/home/interkassa-7ca4363e9a26711c849269b427d20a8de6b9eefdd9f35ab665e2f45a4a0120a8.png' %}" alt="Interkassa" />
+                </div>
+              </div>
+              <div class='text-tabs'>
+                <div class='flex-sm'>
+                  <div class='text'>
+                    <p>Interkassa is a payment processing system that operates with funds and requires a careful and rigorous approach to security.</p>
+                    <p>Previously Interkassa participated in a CTF game with elements of bug hunting at hacker`s conference HackIT.</p>
+                    <p>They had some doubts in a grayhat approach for their infrastructure’s security improvement that were vanished after choosing the right researchers and making a pre-launch of vulnerability rewarding program in a private
+                      mode.</p>
+                  </div>
+                  <ul class='info'>
+                    <li>
+                      <p class='name'>reports</p>
+                      <p class='answer'>19</p>
+                    </li>
+                    <li>
+                      <p class='name'>vulnerabilities</p>
+                      <p class='answer'>13</p>
+                    </li>
+                    <li class='text-small'>
+                      <p class='name'>mode</p>
+                      <p class='answer'>public bug bounty</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class='open-tab'>
+                <div class='logo'>
+                  <img title="" src="{% static 'assets/home/osa-30a47fbe0896ac00c34b763aad1076e3b49eec9ae01c43ebbf4fd5dd85a2d7be.png' %}" alt="Osa" />
+                </div>
+              </div>
+              <div class='text-tabs'>
+                <div class='flex-sm'>
+                  <div class='text'>
+                    <p>OSA is an innovative project with AI and Big Data for automatic recognition, sorting and inventory of products at stores.</p>
+                    <p>Data breaches can cause massive damage to any company. This is especially true for companies operating with Big Data and holding a lot of sensitive information about vendors and companies.</p>
+                    <p>We launched a private bug bounty for OSA.</p>
+                  </div>
+                  <ul class='info'>
+                    <li class='text-small'>
+                      <p class='name'>mode</p>
+                      <p class='answer'>private bug bounty</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class='open-tab'>
+                <div class='logo'>
+                  <img title="" src="https://www.napoleonx.ai/static/images/logo.svg" alt="Logo" />
+                </div>
+              </div>
+              <div class='text-tabs'>
+                <div class='text'>
+                  <p>NapoleonX is the first crypto asset manager project piloting trading bots.</p>
+                  <p>The vulnerability rewarding program was a magic wand which helped to deal with annoying blackmailers actively threatening and extorting payout in exchange for vulnerability disclosure.</p>
+                  <p>After some rapid crowd testing, we figured out that the project’s security was solid and the blackmailers had no choice but to retreat or move on to another target.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='slider-container stop-fixed'>
+    <div class='container--center'>
+      <div class='padding'>
+        <div class='title'>
+          <h2>Meet most active researchers</h2>
+        </div>
+        <div class='slider'>
+          <div class='info'>
+            <div class='video-player' id='video_1'>
+              <video poster='../img.youtube.com/vi/39qVaabeO-U/mqdefault.jpg'>
+                <source data-url='/assets/home/video/hackers/jack_cable-684da3a8d423522d11b96c88ca79872441bb9ba44aa778bdf2b37cb0378bab31.mp4' src='#' type='video/mp4'>
+              </video>
+              <div class='controlls'>
+                <a class='btn btn-play' href='javascript:void(0)'></a>
+                <a class='btn btn-volume' href='javascript:void(0)'>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                </a>
+                <a class='btn btn-fullscreen' href='javascript:void(0)'></a>
+              </div>
+            </div>
+            <div class='info-slider'>
+              <div class='name'>
+                <h4>Jack Cable</h4>
+                <p>United States</p>
+              </div>
+            </div>
+          </div>
+          <div class='info'>
+            <div class='video-player' id='video_2'>
+              <a href='https://www.youtube.com/watch?v=xCl2Indhw-s' rel='noopener noreferrer' target='_blank'></a>
+              <video poster='../img.youtube.com/vi/xCl2Indhw-s/mqdefault.jpg'>
+                <source data-url='/assets/home/video/hackers/sandeep_singh-ba35590c1729b1bd0f12ff6f91f51a9b5143489e0e6baa957777c5dab80e2984.mp4' src='#' type='video/mp4'>
+              </video>
+              <div class='controlls'>
+                <a class='btn btn-play' href='javascript:void(0)'></a>
+                <a class='btn btn-volume' href='javascript:void(0)'>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                </a>
+                <a class='btn btn-fullscreen' href='javascript:void(0)'></a>
+              </div>
+            </div>
+            <div class='info-slider'>
+              <div class='name'>
+                <h4>Sandeep “Geekboy” Singh</h4>
+                <p>India</p>
+              </div>
+            </div>
+          </div>
+          <div class='info'>
+            <div class='video-player' id='video_3'>
+              <video poster='../img.youtube.com/vi/t_zdfTF1rAM/mqdefault.jpg'>
+                <source data-url='/assets/home/video/hackers/tanner_e-8d039d7cba97d334b058ab01634f41dd776796f50651b6fe3b0f4bf67239ab37.mp4' src='#' type='video/mp4'>
+              </video>
+              <div class='controlls'>
+                <a class='btn btn-play' href='javascript:void(0)'></a>
+                <a class='btn btn-volume' href='javascript:void(0)'>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                </a>
+                <a class='btn btn-fullscreen' href='javascript:void(0)'></a>
+              </div>
+            </div>
+            <div class='info-slider'>
+              <div class='name'>
+                <h4>Tanner “cache-money”</h4>
+                <p>United States</p>
+              </div>
+            </div>
+          </div>
+          <div class='info'>
+            <div class='video-player' id='video_4'>
+              <video poster='../img.youtube.com/vi/BALZlStAfF4/mqdefault.jpg'>
+                <source data-url='/assets/home/video/hackers/julian_keller-61806f4b33a1981f86be061f8692ba579c1d5418f487a30ba3042e71d8a1829e.mp4' src='#' type='video/mp4'>
+              </video>
+              <div class='controlls'>
+                <a class='btn btn-play' href='javascript:void(0)'></a>
+                <a class='btn btn-volume' href='javascript:void(0)'>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                </a>
+                <a class='btn btn-fullscreen' href='javascript:void(0)'></a>
+              </div>
+            </div>
+            <div class='info-slider'>
+              <div class='name'>
+                <h4>Julian “subzero1993” Keller</h4>
+                <p>Germany</p>
+              </div>
+            </div>
+          </div>
+          <div class='info'>
+            <div class='video-player' id='video_5'>
+              <video poster='../img.youtube.com/vi/KxKV6JvJTvw/mqdefault.jpg'>
+                <source data-url='/assets/home/video/hackers/parth_malhotra-b79b656a2ad2e30eeb5f0bcd2f08fcdd4bf41d601811e26b72e73ff7464e0873.mp4' src='#' type='video/mp4'>
+              </video>
+              <div class='controlls'>
+                <a class='btn btn-play' href='javascript:void(0)'></a>
+                <a class='btn btn-volume' href='javascript:void(0)'>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                </a>
+                <a class='btn btn-fullscreen' href='javascript:void(0)'></a>
+              </div>
+            </div>
+            <div class='info-slider'>
+              <div class='name'>
+                <h4>Parth Malhotra</h4>
+                <p>India</p>
+              </div>
+            </div>
+          </div>
+          <div class='info'>
+            <div class='video-player' id='video_6'>
+              <video poster='../img.youtube.com/vi/Kfj9rFCHsms/mqdefault.jpg'>
+                <source data-url='/assets/home/video/hackers/shahmeer_amir-906cc89e51db5b191679deae405fba7433eee4d05ce85b1a9e516f138a64fb8b.mp4' src='#' type='video/mp4'>
+              </video>
+              <div class='controlls'>
+                <a class='btn btn-play' href='javascript:void(0)'></a>
+                <a class='btn btn-volume' href='javascript:void(0)'>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                </a>
+                <a class='btn btn-fullscreen' href='javascript:void(0)'></a>
+              </div>
+            </div>
+            <div class='info-slider'>
+              <div class='name'>
+                <h4>Shahmeer Amir</h4>
+                <p>Pakistan</p>
+              </div>
+            </div>
+          </div>
+          <div class='info'>
+            <div class='video-player' id='video_7'>
+              <video poster='../img.youtube.com/vi/aQD6BBHnchM/mqdefault.jpg'>
+                <source data-url='/assets/home/video/hackers/yasser_hasan_ali-2f1f5885022a51fadc1e04df804b25d6872f9432cddd9881dfe646ec5d5bd293.mp4' src='#' type='video/mp4'>
+              </video>
+              <div class='controlls'>
+                <a class='btn btn-play' href='javascript:void(0)'></a>
+                <a class='btn btn-volume' href='javascript:void(0)'>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                  <span class='bar'></span>
+                </a>
+                <a class='btn btn-fullscreen' href='javascript:void(0)'></a>
+              </div>
+            </div>
+            <div class='info-slider'>
+              <div class='name'>
+                <h4>Yasser Ali</h4>
+                <p>Egypt</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='try-it stop-fixed' style="background:#01210a">
+    <div class='try-it__illustration-1' data-100-top='top: 40%' data-900-top='top: 10%' style="background:#01210a"></div>
+    <div class='try-it__illustration-2' data-100-top='top: 45%' data-900-top='top: 80%' style="background:#01210a"></div>
+    <div class='container--center'>
+      <div class='padding'>
+        <div class='title'>
+          <h2>Try grayhat security testing for free</h2>
+          <p>Sign up for a free trial and see how grayhat testing can reinforce your security, no strings attached.</p>
+          <a rel="noopener" class="btn-start" href="#">Start today
+          </a>
+          <!-- <a rel="noopener" class="btn-start" href="companies/new.html">Start today
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+
+
+  {% include 'footer.html' %}
+
+  <script src="{% static 'assets/home_index-674c2e0b53ae20210c628778d775f126c811e495141415755cc01000b9a1610e.js' %}"></script>
+  <noscript>
+    <iframe height='0' src='https://www.googletagmanager.com/ns.html?id=GTM-PV9J5G7' style='display:none;visibility:hidden' width='0'></iframe>
+  </noscript>
+
+  <!-- Twitter universal website tag code -->
+  <script>
+    ! function(e, t, n, s, u, a) {
+      e.twq || (s = e.twq = function() {
+          s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+        }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = '../static.ads-twitter.com/uwt.js',
+        a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a))
+    }(window, document, 'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init', 'o0386');
+    twq('track', 'PageView');
+  </script>
+  <!-- End Twitter universal website tag code -->
+  <!-- Schema for social media links -->
+  <script type="application/ld+json">
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "hackenproof.com",
+    "url": "https://hackenproof.com/",
+    "sameAs": [
+      "https://www.facebook.com/hackenproof/",
+      "https://twitter.com/hackenproof",
+      "https://t.me/hackenproof",
+      "https://bitcointalk.org/index.php?topic=2135278"
+    ]
+  </script>
+  <!-- End Schema for social media links -->
+  <!-- Schema code for logo image-->
+  <script type="application/ld+json">
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url": "https://hackenproof.com/",
+    "logo": "https://hackenproof.com/assets/cup/logo-cup-372c14b88c255d9567c39787551f64265cc43c895699b542bb07ba73c8aa30dd.svg"
+  </script>
+  <!-- End schema code for logo image -->
+
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="{% static '../js.hs-scripts.com/4674924.js' %}"></script>
+  <!-- End of HubSpot Embed Code -->
+
+</body>
+
+<!-- Mirrored from hackenproof.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Jul 2020 17:45:53 GMT -->
+
+</html>

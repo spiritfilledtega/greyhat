@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+{% load static %}
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en>
+<![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en">
+<![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]> ><! <![endif]-->
+<html lang='en'>
+<!-- <![endif] -->
+
+<!-- Mirrored from hackenproof.com/cup by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Jul 2020 17:53:33 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head lang='en'>
+  <meta charset='utf-8'>
+  <title>Live hacking events - Hackenproof</title>
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token" content="XXkXEyTaFdpmaGFSPK3wERjOe9o7h0cQfVOuTaGbUgRy0GLHRqnxTkx1IqX9yUbIDJmro+kkThoMRLtNTc0MhQ==" />
+  <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'assets/home/favicons/apple-touch-icon-877e3ab6812d47bab88fb6d481acdbea7fa6995a95c89743bb18e5a0a4012892.png' %}" sizes="180x180" />
+  <link rel="icon" type="image/png" href="{% static 'assets/home/favicons/favicon-32x32-63afb31b2b98fafbbdb12c5cbcba1231e3a7ba8d669ea7680370c90bdc4e1ad7.png' %}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{% static 'assets/home/favicons/favicon-16x16-b7aeb056379d4392ef3764ec45581ccf88771f6a999d9b39f6d8639529f60bc4.png' %}" sizes="16x16" />
+  <link rel="mask-icon" type="image/x-icon" href="assets/home/favicons/safari-pinned-tab-20a13a367da90ce0918721083730f3c1ec5bf828cd89f878d630121458f0e65a.svg" color="#5bbad5" />
+  <meta content='/assets/home/favicons/mstile-150x150-6990bfe38c7ebb2ce9954480fc5b7fcd774a873ffb9ca42e093261d823eb7318.png' name='msapplication-TileImage'>
+  <meta content='#2b5797' name='msapplication-TileColor'>
+  <meta content='#ffffff' name='theme-color'>
+  <link href='{% static 'assets/home/favicons/manifest-c27e4cdf86732c1ccf3a704ca15d264810980377aac9e86862f58e52cd67d722.json' %}' rel='manifest'>
+  <meta name="action-cable-url" content="wss://hackenproof.com:8443" />
+  <link href='cup.html' rel='canonical'>
+  <meta content='HackenProof' property='og:title'>
+  <meta content='website' property='og:type'>
+  <meta content='http://hackenproof.com/' property='og:url'>
+  <meta content='https://hackenproof.com/cup preview.png' property='og:image'>
+  <meta content='Onsite Bug Bounty Marathon' property='og:description'>
+  <meta content='Onsite Bug Bounty Marathon' name='description'>
+
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        '../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PV9J5G7');
+  </script>
+  <script>
+    ! function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      '../connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '751597178561630');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height='1' src='https://www.facebook.com/tr?id=751597178561630&amp;ev=PageView&amp;noscript=1' style='display:none' width='1'>
+  </noscript>
+
+
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+  <script>
+    window.NREUM || (NREUM = {});
+    NREUM.info = {
+      "beacon": "bam.nr-data.net",
+      "errorBeacon": "bam.nr-data.net",
+      "licenseKey": "fbc6b5c5dc",
+      "applicationID": "143379461",
+      "transactionName": "dg1fFUtXCFxSSkpaEUVNWA9dXRw=",
+      "queueTime": 0,
+      "applicationTime": 24,
+      "agent": ""
+    }
+  </script>
+  <script>
+    (window.NREUM || (NREUM = {})).loader_config = {
+      licenseKey: "fbc6b5c5dc",
+      applicationID: "143379461"
+    };
+    window.NREUM || (NREUM = {}), __nr_require = function(e, n, t) {
+      function r(t) {
+        if (!n[t]) {
+          var i = n[t] = {
+            exports: {}
+          };
+          e[t][0].call(i.exports, function(n) {
+            var i = e[t][1][n];
+            return r(i || n)
+          }, i, i.exports)
+        }
+        return n[t].exports
+      }
+      if ("function" == typeof __nr_require) return __nr_require;
+      for (var i = 0; i < t.length; i++) r(t[i]);
+      return r
+    }({
+      1: [function(e, n, t) {
+        function r() {}
+
+        function i(e, n, t) {
+          return function() {
+            return o(e, [u.now()].concat(f(arguments)), n ? null : this, t), n ? void 0 : this
+          }
+        }
+        var o = e("handle"),
+          a = e(4),
+          f = e(5),
+          c = e("ee").get("tracer"),
+          u = e("loader"),
+          s = NREUM;
+        "undefined" == typeof window.newrelic && (newrelic = s);
+        var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+          l = "api-",
+          d = l + "ixn-";
+        a(p, function(e, n) {
+          s[n] = i(l + n, !0, "api")
+        }), s.addPageAction = i(l + "addPageAction", !0), s.setCurrentRouteName = i(l + "routeName", !0), n.exports = newrelic, s.interaction = function() {
+          return (new r).get()
+        };
+        var m = r.prototype = {
+          createTracer: function(e, n) {
+            var t = {},
+              r = this,
+              i = "function" == typeof n;
+            return o(d + "tracer", [u.now(), e, t], r),
+              function() {
+                if (c.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], t), i) try {
+                  return n.apply(this, arguments)
+                } catch (e) {
+                  throw c.emit("fn-err", [arguments, this, e], t), e
+                } finally {
+                  c.emit("fn-end", [u.now()], t)
+                }
+              }
+          }
+        };
+        a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, n) {
+          m[n] = i(d + n)
+        }), newrelic.noticeError = function(e, n) {
+          "string" == typeof e && (e = new Error(e)), o("err", [e, u.now(), !1, n])
+        }
+      }, {}],
+      2: [function(e, n, t) {
+        function r(e, n) {
+          var t = e.getEntries();
+          t.forEach(function(e) {
+            "first-paint" === e.name ? c("timing", ["fp", Math.floor(e.startTime)]) : "first-contentful-paint" === e.name && c("timing", ["fcp", Math.floor(e.startTime)])
+          })
+        }
+
+        function i(e, n) {
+          var t = e.getEntries();
+          t.length > 0 && c("lcp", [t[t.length - 1]])
+        }
+
+        function o(e) {
+          if (e instanceof s && !l) {
+            var n, t = Math.round(e.timeStamp);
+            n = t > 1e12 ? Date.now() - t : u.now() - t, l = !0, c("timing", ["fi", t, {
+              type: e.type,
+              fid: n
+            }])
+          }
+        }
+        if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) {
+          var a, f, c = e("handle"),
+            u = e("loader"),
+            s = NREUM.o.EV;
+          if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) {
+            a = new PerformanceObserver(r), f = new PerformanceObserver(i);
+            try {
+              a.observe({
+                entryTypes: ["paint"]
+              }), f.observe({
+                entryTypes: ["largest-contentful-paint"]
+              })
+            } catch (p) {}
+          }
+          if ("addEventListener" in document) {
+            var l = !1,
+              d = ["click", "keydown", "mousedown", "pointerdown", "touchstart"];
+            d.forEach(function(e) {
+              document.addEventListener(e, o, !1)
+            })
+          }
+        }
+      }, {}],
+      3: [function(e, n, t) {
+        function r(e, n) {
+          if (!i) return !1;
+          if (e !== i) return !1;
+          if (!n) return !0;
+          if (!o) return !1;
+          for (var t = o.split("."), r = n.split("."), a = 0; a < r.length; a++)
+            if (r[a] !== t[a]) return !1;
+          return !0
+        }
+        var i = null,
+          o = null,
+          a = /Version\/(\S+)\s+Safari/;
+        if (navigator.userAgent) {
+          var f = navigator.userAgent,
+            c = f.match(a);
+          c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[1])
+        }
+        n.exports = {
+          agent: i,
+          version: o,
+          match: r
+        }
+      }, {}],
+      4: [function(e, n, t) {
+        function r(e, n) {
+          var t = [],
+            r = "",
+            o = 0;
+          for (r in e) i.call(e, r) && (t[o] = n(r, e[r]), o += 1);
+          return t
+        }
+        var i = Object.prototype.hasOwnProperty;
+        n.exports = r
+      }, {}],
+      5: [function(e, n, t) {
+        function r(e, n, t) {
+          n || (n = 0), "undefined" == typeof t && (t = e ? e.length : 0);
+          for (var r = -1, i = t - n || 0, o = Array(i < 0 ? 0 : i); ++r < i;) o[r] = e[n + r];
+          return o
+        }
+        n.exports = r
+      }, {}],
+      6: [function(e, n, t) {
+        n.exports = {
+          exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+        }
+      }, {}],
+      ee: [function(e, n, t) {
+        function r() {}
+
+        function i(e) {
+          function n(e) {
+            return e && e instanceof r ? e : e ? c(e, f, o) : o()
+          }
+
+          function t(t, r, i, o) {
+            if (!l.aborted || o) {
+              e && e(t, r, i);
+              for (var a = n(i), f = v(t), c = f.length, u = 0; u < c; u++) f[u].apply(a, r);
+              var p = s[y[t]];
+              return p && p.push([b, t, r, a]), a
+            }
+          }
+
+          function d(e, n) {
+            h[e] = v(e).concat(n)
+          }
+
+          function m(e, n) {
+            var t = h[e];
+            if (t)
+              for (var r = 0; r < t.length; r++) t[r] === n && t.splice(r, 1)
+          }
+
+          function v(e) {
+            return h[e] || []
+          }
+
+          function g(e) {
+            return p[e] = p[e] || i(t)
+          }
+
+          function w(e, n) {
+            u(e, function(e, t) {
+              n = n || "feature", y[t] = n, n in s || (s[n] = [])
+            })
+          }
+          var h = {},
+            y = {},
+            b = {
+              on: d,
+              addEventListener: d,
+              removeEventListener: m,
+              emit: t,
+              get: g,
+              listeners: v,
+              context: n,
+              buffer: w,
+              abort: a,
+              aborted: !1
+            };
+          return b
+        }
+
+        function o() {
+          return new r
+        }
+
+        function a() {
+          (s.api || s.feature) && (l.aborted = !0, s = l.backlog = {})
+        }
+        var f = "nr@context",
+          c = e("gos"),
+          u = e(4),
+          s = {},
+          p = {},
+          l = n.exports = i();
+        l.backlog = s
+      }, {}],
+      gos: [function(e, n, t) {
+        function r(e, n, t) {
+          if (i.call(e, n)) return e[n];
+          var r = t();
+          if (Object.defineProperty && Object.keys) try {
+            return Object.defineProperty(e, n, {
+              value: r,
+              writable: !0,
+              enumerable: !1
+            }), r
+          } catch (o) {}
+          return e[n] = r, r
+        }
+        var i = Object.prototype.hasOwnProperty;
+        n.exports = r
+      }, {}],
+      handle: [function(e, n, t) {
+        function r(e, n, t, r) {
+          i.buffer([e], r), i.emit(e, n, t)
+        }
+        var i = e("ee").get("handle");
+        n.exports = r, r.ee = i
+      }, {}],
+      id: [function(e, n, t) {
+        function r(e) {
+          var n = typeof e;
+          return !e || "object" !== n && "function" !== n ? -1 : e === window ? 0 : a(e, o, function() {
+            return i++
+          })
+        }
+        var i = 1,
+          o = "nr@id",
+          a = e("gos");
+        n.exports = r
+      }, {}],
+      loader: [function(e, n, t) {
+        function r() {
+          if (!x++) {
+            var e = E.info = NREUM.info,
+              n = d.getElementsByTagName("script")[0];
+            if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && n)) return s.abort();
+            u(y, function(n, t) {
+              e[n] || (e[n] = t)
+            }), c("mark", ["onload", a() + E.offset], null, "api");
+            var t = d.createElement("script");
+            t.src = "https://" + e.agent, n.parentNode.insertBefore(t, n)
+          }
+        }
+
+        function i() {
+          "complete" === d.readyState && o()
+        }
+
+        function o() {
+          c("mark", ["domContent", a() + E.offset], null, "api")
+        }
+
+        function a() {
+          return O.exists && performance.now ? Math.round(performance.now()) : (f = Math.max((new Date).getTime(), f)) - E.offset
+        }
+        var f = (new Date).getTime(),
+          c = e("handle"),
+          u = e(4),
+          s = e("ee"),
+          p = e(3),
+          l = window,
+          d = l.document,
+          m = "addEventListener",
+          v = "attachEvent",
+          g = l.XMLHttpRequest,
+          w = g && g.prototype;
+        NREUM.o = {
+          ST: setTimeout,
+          SI: l.setImmediate,
+          CT: clearTimeout,
+          XHR: g,
+          REQ: l.Request,
+          EV: l.Event,
+          PR: l.Promise,
+          MO: l.MutationObserver
+        };
+        var h = "" + location,
+          y = {
+            beacon: "bam.nr-data.net",
+            errorBeacon: "bam.nr-data.net",
+            agent: "js-agent.newrelic.com/nr-1169.min.js"
+          },
+          b = g && w && w[m] && !/CriOS/.test(navigator.userAgent),
+          E = n.exports = {
+            offset: f,
+            now: a,
+            origin: h,
+            features: {},
+            xhrWrappable: b,
+            userAgent: p
+          };
+        e(1), e(2), d[m] ? (d[m]("DOMContentLoaded", o, !1), l[m]("load", r, !1)) : (d[v]("onreadystatechange", i), l[v]("onload", r)), c("mark", ["firstbyte", f], null, "api");
+        var x = 0,
+          O = e(6)
+      }, {}],
+      "wrap-function": [function(e, n, t) {
+        function r(e) {
+          return !(e && e instanceof Function && e.apply && !e[a])
+        }
+        var i = e("ee"),
+          o = e(5),
+          a = "nr@original",
+          f = Object.prototype.hasOwnProperty,
+          c = !1;
+        n.exports = function(e, n) {
+          function t(e, n, t, i) {
+            function nrWrapper() {
+              var r, a, f, c;
+              try {
+                a = this, r = o(arguments), f = "function" == typeof t ? t(r, a) : t || {}
+              } catch (u) {
+                l([u, "", [r, a, i], f])
+              }
+              s(n + "start", [r, a, i], f);
+              try {
+                return c = e.apply(a, r)
+              } catch (p) {
+                throw s(n + "err", [r, a, p], f), p
+              } finally {
+                s(n + "end", [r, a, c], f)
+              }
+            }
+            return r(e) ? e : (n || (n = ""), nrWrapper[a] = e, p(e, nrWrapper), nrWrapper)
+          }
+
+          function u(e, n, i, o) {
+            i || (i = "");
+            var a, f, c, u = "-" === i.charAt(0);
+            for (c = 0; c < n.length; c++) f = n[c], a = e[f], r(a) || (e[f] = t(a, u ? f + i : i, o, f))
+          }
+
+          function s(t, r, i) {
+            if (!c || n) {
+              var o = c;
+              c = !0;
+              try {
+                e.emit(t, r, i, n)
+              } catch (a) {
+                l([a, t, r, i])
+              }
+              c = o
+            }
+          }
+
+          function p(e, n) {
+            if (Object.defineProperty && Object.keys) try {
+              var t = Object.keys(e);
+              return t.forEach(function(t) {
+                Object.defineProperty(n, t, {
+                  get: function() {
+                    return e[t]
+                  },
+                  set: function(n) {
+                    return e[t] = n, n
+                  }
+                })
+              }), n
+            } catch (r) {
+              l([r])
+            }
+            for (var i in e) f.call(e, i) && (n[i] = e[i]);
+            return n
+          }
+
+          function l(n) {
+            try {
+              e.emit("internal-error", n)
+            } catch (t) {}
+          }
+          return e || (e = i), t.inPlace = u, t.flag = a, t
+        }
+      }, {}]
+    }, {}, ["loader"]);
+  </script>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+  <meta content='True' name='HandheldFriendly'>
+  <meta content='yes' name='apple-mobile-web-app-capable'>
+  <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+  <meta content='telephone=no' name='format-detection'>
+  <meta content='address=no' name='format-detection'>
+  <link rel="stylesheet" media="screen" href="{% static 'assets/home_index-9e9e9f24451cfbc39ed0d9f6b308246f53cabfcc7a3cacda389ece1624c31b3e.css' %}" />
+</head>
+
+<body class='cup landing' data-action='index' data-controller='cup'>
+  <div class='flash-msgs--fixed flash-msg--js flash-msg--version' id='flash-msgs'>
+    <div id='flash-msgs__container'>
+    </div>
+  </div>
+
+  <div class='container'>
+    <div class='breadcrumbs breadcrumbs--positioned'>
+
+    </div>
+  </div>
+  <div id='skrollr-body'>
+    <section class='dark intro'>
+      <div class='inverted'>
+        <div class='cup-main-navigation'>
+          <div class='container-md'>
+            <div class='align-center justify-between'>
+              <div class='logo'>
+                <a href='{% url 'basic:home' %}'>
+                  <svg viewBox='0 0 186.07 53.53' xmlns='http://www.w3.org/2000/svg'>
+                    <g>
+                      <polygon class='cls-1' points='178.89 0 178.89 11.14 167.61 0 161.91 0 161.91 22.06 168.9 22.06 168.9 10.77 180.25 22.06 185.87 22.06 185.87 0 178.89 0'></polygon>
+                      <polygon class='cls-1' points='70.92 22.06 89.46 22.06 89.46 15.9 70.92 15.9 70.92 6.23 89.48 6.23 89.48 0 70.92 0 64.74 0 64 0 64 22.06 64.74 22.06 70.92 22.06'></polygon>
+                      <polygon class='cls-1'
+                        points='136.42 22.06 153.51 22.06 153.51 16.51 136.42 16.51 136.42 13.46 153.51 13.46 153.51 8.52 136.42 8.52 136.42 5.55 153.51 5.55 153.51 0 136.42 0 130.07 0 129.5 0 129.5 22.06 130.19 22.06 136.42 22.06'></polygon>
+                      <path class='cls-1' d='M39.22,17.1H49.5v5h6.89V0H32.32V22.06h6.9Zm0-11H49.5V11H39.22Z'></path>
+                      <polygon class='cls-1' points='6.92 14.22 17.02 14.22 17.02 22.06 23.95 22.06 23.95 0 17.02 0 17.02 7.68 6.92 7.68 6.92 0 0 0 0 22.06 6.92 22.06 6.92 14.22'></polygon>
+                      <polygon class='cls-1' points='103.76 15.17 114.48 15.17 121.35 8.62 121.39 8.62 121.39 0 114.48 0 114.48 8.62 103.76 8.62 103.76 0 96.84 0 96.84 22.06 103.76 22.06 103.76 15.17'></polygon>
+                      <rect class='cls-1' height='6.89' width='6.92' x='114.49' y='15.17'></rect>
+                      <path class='cls-1' d='M23,30.32H0V52.38H6.9v-5H24V30.32Zm-5.86,11H6.9V36.45H17.18Z'></path>
+                      <polyline class='cls-1' points='49.96 46.14 49.96 52.41 56.39 52.41 56.39 46.14 49.96 46.14'></polyline>
+                      <path class='cls-1' d='M56.36,30.32h-24v0h0V52.41h6.93V46.14H50l6.43-6.55ZM49.52,40.55H39.24V35.73H49.52Z'></path>
+                      <polygon class='cls-1' points='153.49 30.32 136.42 30.32 131.03 30.32 129.53 30.32 129.53 39.93 129.53 46.07 129.53 52.38 136.42 52.38 136.42 46.07 153.49 46.07 153.49 39.93 136.42 39.93 136.42 36.45 153.49 36.45 153.49 30.32'>
+                      </polygon>
+                      <path class='cls-1' d='M82.56,30.32H64V52.38H89.48V30.32Zm0,15.79H70.94V36.44H82.58Z'></path>
+                      <path class='cls-1' d='M121.43,30.32H96.81V52.38h24.62V36.55h0V30.32Zm-6.9,15.79H103.75V36.44h10.78Z'></path>
+                      <circle class='cls-2' cx='173.88' cy='41.38' r='5.37' transform='translate(-4.38 28.39) rotate(-9.22)'></circle>
+                      <path class='cls-1' d='M185.22,37.66l0,.12.81-.26,0-.13a12.9,12.9,0,0,0-7.78-8l-.12,0-.29.8.12,0A12,12,0,0,1,185.22,37.66Z'></path>
+                      <path class='cls-1' d='M185.13,45.36a12.05,12.05,0,0,1-7.37,7.31l-.13,0,.28.8.12,0a12.88,12.88,0,0,0,7.9-7.83l0-.12-.81-.29Z'></path>
+                      <path class='cls-1' d='M162.57,45.15l0-.13-.81.27,0,.13a12.84,12.84,0,0,0,8,8.07l.12,0,.28-.81-.12,0A12,12,0,0,1,162.57,45.15Z'></path>
+                      <path class='cls-1' d='M162.62,37.45A12,12,0,0,1,170.26,30l.13,0-.26-.81-.13,0a12.87,12.87,0,0,0-8.18,8l0,.12.8.28Z'></path>
+                    </g>
+                  </svg>
+
+                </a>
+              </div>
+              <div class='pull-right'>
+                <div class='btn-cup-wrapper'>
+                  <a class="btn-cup smooth-scroll-link-parallax" href="#get-started">Get started
+                    <svg class='btn-cup-angle'>
+                      <path d='M7 0H-196V60H31V24.5L7 0Z'></path>
+                    </svg>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='grid-container'>
+        <div class='grid-col-1'>
+          <div class='scroll-wrapper hidden-sm' data-200='bottom: 10%' data-700='bottom: 1%'>
+            <span class='scrolldown'>
+              <span>Scroll</span>
+              <img src="assets/cup/icon-scroll-down-5688195002e513d2d3434e32cf0f156460e7a6710b3a3f2f243b5df1e7dcd0ca.svg" alt="Icon scroll down" />
+            </span>
+          </div>
+        </div>
+        <div class='grid-col-2'></div>
+        <div class='grid-col-3'>
+          <div class='section-ellipse'></div>
+          <div class='point-animated-lightning' data-100-start='opacity: 0; height: 30px; top: 0%' data-200-start='opacity:0.9; height: 150px; top: 70%' data-300-start='opacity: 0; height: 0; top: 100%'
+            data-50-start='opacity: 0.8; height: 1px; width: 5px; top: 0%; right: -1px' data-51-start='opacity: 0.8; height: 1px; width: 1px; top: 0%' data-start='opacity: 0; height: 1px; top: 0%; right: 450px'></div>
+        </div>
+        <div class='grid-col-4'></div>
+      </div>
+      <div class='container-md content-centered'>
+        <div class='row'>
+          <div class='col-sm-10'>
+            <h1 class='title-xl'>HACKEN <br />CUP</h1>
+            <div class='description-wrapper'>
+              <div class='trigger-play-video-sm'>
+                <div class='svg-ellipse'>
+                  <svg class='icon-ellipse-play' viewBox='0 0 101 101'>
+                    <path
+                      d='M100.061 50.9003C100.061 62.6956 95.8485 74.1032 88.1833 83.0683C80.518 92.0334 69.9033 97.9666 58.2512 99.7992C46.5991 101.632 34.6756 99.2433 24.6285 93.064C14.5813 86.8846 7.07097 77.3206 3.45029 66.0948C-0.170401 54.8689 0.336569 42.7191 4.87987 31.8339C9.42318 20.9487 17.7042 12.0436 28.2312 6.72279C38.7582 1.40195 50.8392 0.0150877 62.2981 2.81203C73.757 5.60896 83.8406 12.4058 90.7323 21.9783'>
+                    </path>
+                  </svg>
+                  <a class='play-cup modal-open' href='#modal-cup-video'>
+                    <svg class='icon-play' viewBox='0 0 22 22'>
+                      <path d='M21.3575 10.9056L8.39393 2.52526L8.39388 19.1919L21.3575 10.9056Z'></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <h2 class='subtitle-events'>
+                Live Hacking Events
+              </h2>
+              <h4>Host a bug bounty event custom-tailored to your needs, to allow top hackers from all over the world to secure your product together with your in-house security team</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class='cup-main-image' data-1400='background-position: 0 -250px; height: 200px' data-350='background-position: 0 -150px; height: 450px'></div>
+    <section class='about' id='about'>
+      <div class='grid-container'>
+        <div class='grid-col-1'></div>
+        <div class='grid-col-2'></div>
+        <div class='grid-col-3'>
+          <div class='point-animated-lightning' data--500-bottom='opacity: 0.8; height: 1px; width: 1px; top: 0%' data--501-bottom='opacity: 0.5; height: 30px; top: 0%' data--600-bottom='opacity:0.9; height: 150px; top: 40%'
+            data--700-bottom='opacity: 0; height: 0; top: 100%'></div>
+        </div>
+        <div class='grid-col-4'></div>
+      </div>
+      <div class='container-md'>
+        <div class='row'>
+          <div class='col-md-5 offset-bottom-2'>
+            <div class='line'>
+              <div class='about-image'>
+                <img src="assets/cup/icon-search-8bb80bc81b1ddb6c07169ca04ee03a36083660816b0a0b9b7ce150efc13b8965.svg" alt="Icon search" />
+              </div>
+              <p>Get undivided attention on your product by some of the best white hat hackers in the world in a trusted environment</p>
+            </div>
+            <div class='line'>
+              <div class='about-image'>
+                <img src="assets/cup/icon-finding-b066a9a211eab80a9e89a67fc6afbf43d94c43450aa49e0cc0bf76c7cea09ca9.svg" alt="Icon finding" />
+              </div>
+              <p>Jump-start your program by finding critical vulnerabilities in a short time-frame</p>
+            </div>
+          </div>
+          <div class='col-md-5'>
+            <img src="{% static 'assets/cup/cup_2018_photo_2-6b9963566f5976dfef6dc9ae6a539fc23f54ba17b58f908e47b218c656c457c2.jpg' %}" alt="Cup 2018 photo 2" />
+          </div>
+        </div>
+        <div class='row reverse-md'>
+          <div class='col-md-5'>
+            <img src="{% static 'assets/cup/cup_2018_photo_3-bc131e4deef47b9d07d99cb48658427c18f6066d87df284240fcd97a8790cb9d.jpg' %}" alt="Cup 2018 photo 3" />
+          </div>
+          <div class='col-md-5 offset-bottom-2'>
+            <div class='line'>
+              <div class='about-image'>
+                <img src="assets/cup/icon-exchange-5d3207fc06252dfcef9eabfa5a92aacb08177338b07abea134d37b6d6c2d000d.svg" alt="Icon exchange" />
+              </div>
+              <p>Let your internal team exchange experience with the top security researchers</p>
+            </div>
+            <div class='line'>
+              <div class='about-image'>
+                <img src="assets/cup/icon-globally-8ddecef5787d41243bd0eb50cdc0ae378055ee6c78045c75626c4341e67f0945.svg" alt="Icon globally" />
+              </div>
+              <p>Promote your security <br />awareness globally</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='participate' id='get-started'>
+      <div class='grid-container'>
+        <div class='grid-col-1'></div>
+        <div class='grid-col-2'></div>
+        <div class='grid-col-3'>
+          <div class='point-animated-lightning' data--500-bottom='opacity: 0.8; height: 1px; width: 1px; top: 0%' data--501-bottom='opacity: 0.5; height: 30px; top: 0%' data--600-bottom='opacity:0.9; height: 150px; top: 40%'
+            data--700-bottom='opacity: 0; height: 0; top: 100%'></div>
+          <img class="cup-bg-noise" src="assets/cup/bg-noise-bacda732378d9be3712d1d320e6b2ef440867cf71cf5538706cccc3c96ef6a9f.svg" alt="Bg noise" />
+        </div>
+        <div class='grid-col-4'></div>
+      </div>
+      <div class='container-md'>
+        <h3 class='title-cta'>get started <br />now</h3>
+        <div class='form form-cup-flat'>
+          <div class='form-title'>
+            <h4>Test your product and meet the best hackers in the world</h4>
+          </div>
+          <div class='form-body'>
+            <div class='row'>
+              <iframe id='contact-form' sandbox='allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals' scrolling='auto' src='https://hacken.io/hackenproof-com-cup/'
+                style='osition: static; border: none; display: block; overflow: hidden; height: 1005px;' width='100%'></iframe>
+              <script>
+                window.addEventListener('message', function(e) {
+                  var iframe = document.getElementById('contact-form');
+                  var eventName = e.data[0];
+                  var data = e.data[1];
+                  data = 'height:' + data + 'px; position: static; border: none; display: block; overflow: hidden; min-width: 100%; min-height: 100px;';
+                  switch (eventName) {
+                    case 'setHeight':
+                      iframe.setAttribute('style', data);
+                      break;
+                  }
+                }, false);
+              </script>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='last-words'>
+      <div class='grid-container'>
+        <div class='grid-col-1'></div>
+        <div class='grid-col-2'></div>
+        <div class='grid-col-3'>
+          <div class='point-animated-lightning' data--500-bottom='opacity: 0.8; height: 1px; width: 1px; top: 0%' data--501-bottom='opacity: 0.5; height: 30px; top: 0%' data--600-bottom='opacity:0.9; height: 150px; top: 40%'
+            data--700-bottom='opacity: 0; height: 0; top: 100%'></div>
+        </div>
+        <div class='grid-col-4'></div>
+      </div>
+      <div class='container-md'>
+        <div class='row offset-bottom-3'>
+          <div class='clients-feedback col-md-4 offset-bottom-3'>
+            <div class='align-items-end offset-bottom-2'>
+              <img class="clients-image" src="{% static 'assets/cup/cup_2018_photo_4-20fb3820706787b922117a2c884707405819dd5dab69b1ba2cf932159cb8b95a.jpg' %}" alt="Cup 2018 photo 4" />
+              <div>
+                <div class='clients-logo'><img src="assets/cup/logo-uklon-a6a7c7f8bfa7c8f8caf2f8d91ec696ea460a29ad1041c5ab5fd937b85e78a243.svg" alt="Logo uklon" /></div>
+                <p>Vitaliy Diatlenko, <br />CTO at Uklon</p>
+              </div>
+            </div>
+            <p>For 9 hours, 25 ethical hackers have been testing our website and mobile apps. Throughout the whole day, Uklon’s technical team have been discussing reported vulnerabilities with hackers that were present at the event. I think that Bug
+              Bounty Programs are a great and cost-efficient way to strengthen security for large and mature companies.</p>
+          </div>
+          <div class='clients-feedback col-md-4'>
+            <div class='align-items-end offset-bottom-2'>
+              <img class="clients-image" src="{% static 'assets/cup/cup_2018_photo_5-60df6f76cd7c64de319c6d74089a3969efcd69939a339d967f26a7897fbae0ca.jpg' %}" alt="Cup 2018 photo 5" />
+              <div>
+                <div class='clients-logo'><img src="{% static 'assets/cup/logo-crypviser-d94cb78262b5cc54803f0f4c73c990164b32771ee722abf5e90dca44b4e295bb.png' %}" alt="Logo crypviser" /></div>
+                <p>Vadim Andryan, <br />CEO at Crypviser</p>
+              </div>
+            </div>
+            <p>It was really empowering to witness the hacker community working in person. Our security team was able to collaborate live with top hackers face-to-face, helping us find more bugs faster. We felt excitement throughout the whole event.
+            </p>
+          </div>
+        </div>
+        <div class='row offset-bottom-3'>
+          <div class='learn-more col-sm-8 col-sm-offset-1 align-center'>
+            <div>
+              <h4>Want to learn more?</h4>
+              <p>Get in touch with us</p>
+            </div>
+            <div class='btn-cup-wrapper'>
+              <a class="btn-cup smooth-scroll-link" href="#get-started">Contact us
+                <svg class='btn-cup-angle'>
+                  <path d='M7 0H-196V60H31V24.5L7 0Z'></path>
+                </svg>
+              </a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    {% include 'footer.html' %}
+
+    <div class='modal modal--animated' id='modal-cup-video'>
+      <div class='modal-bg modal-close'></div>
+      <div class='modal-content'>
+        <div class='video-player' id='video_1'>
+          <video class='video-fluid' poster='assets/cup/video/hacken_cup_2018_poster-054fb11be44820a9135879fd3356870024c7d43253769c97d8057f323690ef7b.jpg'>
+            <source data-url='/assets/cup/video/hacken_cup_2018-447ac6f26799adc17694b42724d17ac70e76f2cce004fabe578b60e15b900baf.mp4' src='#' type='video/mp4'>
+          </video>
+          <div class='controlls controlls--large'>
+            <a class='btn btn-play' href='javascript:void(0)'></a>
+            <a class='btn btn-volume' href='javascript:void(0)'>
+              <span class='bar'></span>
+              <span class='bar'></span>
+              <span class='bar'></span>
+            </a>
+            <a class='btn btn-fullscreen' href='javascript:void(0)'></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'assets/home_index-674c2e0b53ae20210c628778d775f126c811e495141415755cc01000b9a1610e.js' %}"></script>
+  <noscript>
+    <iframe height='0' src='https://www.googletagmanager.com/ns.html?id=GTM-PV9J5G7' style='display:none;visibility:hidden' width='0'></iframe>
+  </noscript>
+
+  <!-- Twitter universal website tag code -->
+  <script>
+    ! function(e, t, n, s, u, a) {
+      e.twq || (s = e.twq = function() {
+          s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+        }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = '../static.ads-twitter.com/uwt.js',
+        a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a))
+    }(window, document, 'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init', 'o0386');
+    twq('track', 'PageView');
+  </script>
+  <!-- End Twitter universal website tag code -->
+  <!-- Schema for social media links -->
+  <script type="application/ld+json">
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "hackenproof.com",
+    "url": "https://hackenproof.com/",
+    "sameAs": [
+      "https://www.facebook.com/hackenproof/",
+      "https://twitter.com/hackenproof",
+      "https://t.me/hackenproof",
+      "https://bitcointalk.org/index.php?topic=2135278"
+    ]
+  </script>
+  <!-- End Schema for social media links -->
+  <!-- Schema code for logo image-->
+  <script type="application/ld+json">
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url": "https://hackenproof.com/",
+    "logo": "https://hackenproof.com/assets/cup/logo-cup-372c14b88c255d9567c39787551f64265cc43c895699b542bb07ba73c8aa30dd.svg"
+  </script>
+  <!-- End schema code for logo image -->
+
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="{% static '../js.hs-scripts.com/4674924.js' %}"></script>
+  <!-- End of HubSpot Embed Code -->
+
+</body>
+
+<!-- Mirrored from hackenproof.com/cup by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Jul 2020 17:53:40 GMT -->
+
+</html>

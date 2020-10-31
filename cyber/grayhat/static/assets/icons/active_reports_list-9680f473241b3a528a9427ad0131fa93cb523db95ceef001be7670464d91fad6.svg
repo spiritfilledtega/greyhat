@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 25"><defs><style>.cls-1{fill:#31a4b2;}.cls-2{fill:#fff;}</style></defs><title>active_reports_list</title>
+<path class="cls-1" d="M15.18,1.15H12.83A1.69,1.69,0,0,0,11.25,0H6.75A1.69,1.69,0,0,0,5.16,1.15H2.81A2.85,2.85,0,0,0,0,4v16.1A2.85,2.85,0,0,0,2.81,23H15.18A2.85,2.85,0,0,0,18,20.13V4A2.85,2.85,0,0,0,15.18,1.15Z" transform="translate(0)"/>
+<path class="cls-2" d="M6.75,1.15h4.5a0.58,0.58,0,1,1,0,1.15H6.75a0.58,0.58,0,1,1,0-1.15h0Z" transform="translate(0)"/>
+<path class="cls-2" d="M15.18,21.85H2.81a1.71,1.71,0,0,1-1.69-1.72V9.2H16.87V20.13A1.71,1.71,0,0,1,15.18,21.85Z" transform="translate(0)"/>
+<rect class="cls-1" x="3" y="12" width="12" height="1"/>
+<rect class="cls-1" x="3" y="15" width="12" height="1"/>
+<rect class="cls-1" x="3" y="18" width="12" height="1"/>
+<circle class="cls-3" cx="18.5" cy="21.5" r="3.5" fill="#31cc81"/>
+</svg>

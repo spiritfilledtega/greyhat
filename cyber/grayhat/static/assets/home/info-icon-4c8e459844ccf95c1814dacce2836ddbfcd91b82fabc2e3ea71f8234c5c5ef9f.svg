@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1165.5 562.5 306.161 306.161">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #5a5a5a;
+        stroke-width: 17px;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #5a5a5a;
+        font-size: 218px;
+        font-family: Helvetica;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(2607.162 1431.161) rotate(180)">
+    <g id="error-icon" transform="translate(1125.25 561.25)">
+      <path id="Path_1" data-name="Path 1" class="cls-1" d="M145.331.75A144.581,144.581,0,1,1,.75,145.331,144.581,144.581,0,0,1,145.331.75Z" transform="translate(18 9)"/>
+      <text id="i" class="cls-2" transform="translate(187.386 72.791) rotate(180)"><tspan x="0" y="0">i</tspan></text>
+    </g>
+  </g>
+</svg>

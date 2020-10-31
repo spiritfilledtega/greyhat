@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="132.25 97.25 15.5 15.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #ea5148;
+        stroke-width: 1.5px;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #ea5148;
+        font-size: 10px;
+        font-family: Helvetica-Bold, Helvetica;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(132.25 97.25)">
+    <path id="Path_1" data-name="Path 1" class="cls-1" d="M7.75.75a7,7,0,1,1-7,7A7,7,0,0,1,7.75.75Z"/>
+    <text id="i" class="cls-2" transform="translate(9.25 4.031) rotate(180)"><tspan x="0" y="0">i</tspan></text>
+  </g>
+</svg>
